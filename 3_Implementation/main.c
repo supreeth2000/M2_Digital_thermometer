@@ -52,7 +52,7 @@ while(1)
 
 {
 
-COUNTA = ADC/4; //since the resolution (2.56/2^10 = 0.0025) is 2.5mV there will be an increment of 4 for every 10mV input, that means for every degree raise there will be increment of 4 in digital value. So to get the temperature we have to divide ADC output by four.
+COUNTA = ADC/4; 
 
 send_a_string ("CIRCUIT DIGEST ");//displaying name
 
@@ -62,9 +62,9 @@ send_a_string ("Temp(C)=");// displaying name
 
 send_a_command(0x80 + 0x40 + 8); // shifting cursor  to 9st  shell  of second line
 
-itoa(COUNTA,SHOWA,10); //command for putting variable number in LCD(variable number, in which character to replace, which base is variable(ten here as we are counting number in base10))
+itoa(COUNTA,SHOWA,10); 
 
-send_a_string(SHOWA); //telling the display to show character(replaced by variable number) of first person after positioning the courser on LCD
+send_a_string(SHOWA); 
 
 send_a_string ("      ");
 
