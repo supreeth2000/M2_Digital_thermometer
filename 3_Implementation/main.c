@@ -54,7 +54,7 @@ while(1)
 
 COUNTA = ADC/4; 
 
-send_a_string ("CIRCUIT DIGEST ");//displaying name
+send_a_string ("Thermometer");//displaying name
 
 send_a_command(0x80 + 0x40 + 0); // shifting cursor  to 1st  shell  of second line
 
@@ -78,7 +78,7 @@ void send_a_command(unsigned char command)
 
 {
 
-PORTA = command;
+PORTB = command;
 
 PORTD &= ~ (1<<RS); //putting 0 in RS to tell lcd we are sending command
 
@@ -88,7 +88,7 @@ PORTD |= 1<<E; //telling lcd to receive command /data at the port
 
 PORTD &= ~1<<E;//telling lcd we completed sending data
 
-PORTA= 0;
+PORTB= 0;
 
 }
 
@@ -96,7 +96,7 @@ void send_a_character(unsigned char character)
 
 {
 
-PORTA= character;
+PORTB= character;
 
 PORTD |= 1<<RS;//telling LCD we are sending data not commands
 
@@ -104,9 +104,9 @@ PORTD |= 1<<E;//telling LCD to start receiving command/data
 
 _delay_ms(50);
 
-PORTD &= ~1<<E;//telling lcd we completed sending data/command
+PORTD &= ~1<<E;
 
-PORTA = 0;
+PORTB = 0;
 
 }
 
