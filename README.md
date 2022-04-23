@@ -15,3 +15,6 @@
   * Self-test or diagnostic capabilities
   * Battery-powered
   ****
+# References:
+ * https://www.globalspec.com/learnmore/sensors_transducers_detectors/temperature_sensing/digital_thermometers
+ * https://circuitdigest.com/microcontroller-projects/avr-microcontroller-lm35-temperature-sensor-based-digital-thermometer
